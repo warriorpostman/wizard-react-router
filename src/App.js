@@ -19,7 +19,7 @@ class App extends Component {
         <Router history={browserHistory}>
           <Route path="/">
             <Route path="/wizard" component={WizardPage}></Route>
-            <Route path="/wizard/:stepNumber" component={WizardPage} />
+            <Route path="/wizard/:pageNumber" component={WizardPage} />
           </Route>
         </Router>
       </div>

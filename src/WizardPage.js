@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
 import _ from 'lodash';
-
+import { Link } from 'react-router-dom';
 import DetailPage from './DetailPage';
 
 class WizardPage extends Component {
@@ -14,34 +13,35 @@ class WizardPage extends Component {
         {rick: 'rick', astley: 'astley'},
       ]
     };
-    console.log('constructor');
-    console.log('- props', props.params);
+    console.log('- props', props);
+    console.log('params', this.props.match.params);
   }
 
-  componentWillMount
+  // componentWillMount
 
   componentWillReceiveProps(nextProps) {
-    console.log('c will receive', nextProps.params.pageNumber);
+    console.log('c will receive', nextProps.match.params);
   }
 
   next() {
     console.log('in next');
-    console.log(' - ', this.props.params);
+    console.log(' - ', this.props.match.params);
   }
 
   nextPage() {
-    return (_.toNumber(this.props.params.pageNumber) + 1)
+    console.log(this.props.match.params);
+    return (_.toNumber(this.props.match.params.pageNumber) + 1)
   }
 
   render() {
     return (
-      <div className="WizardPage">
+      <div className="WizardPage block">
         <p className="">
           Here's a wizard component.
         </p>
         <DetailPage 
-          obj={this.state.data[_.toNumber(this.props.params.pageNumber)-1]} 
-          pageNumber={this.props.params.pageNumber}> 
+          obj={this.state.data[_.toNumber(this.props.match.params.pageNumber)-1]} 
+          pageNumber={this.props.match.params.pageNumber}> 
         </DetailPage>
 
         <div className="col-md-8">
@@ -64,7 +64,6 @@ class WizardPage extends Component {
             </ul>
           </div>
         </div>
-              
       </div>
     );
   }

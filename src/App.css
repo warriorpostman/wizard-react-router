@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.active-link {
+  font-weight: bolder
+}
+
+.main-menu li {
+  margin-left:300px;
+  text-align:left;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;

@@ -6,9 +6,19 @@
   font-weight: bolder
 }
 
+.main-menu {
+  background-color: #66a5dd;
+  text-align: center;
+}
 .main-menu li {
-  margin-left:300px;
+  width: auto;
+  margin-top:.3em;
+  background-color: #66a5dd;
   text-align:left;
+}
+
+.pure-menu h5 {
+  float: left;
 }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -34,6 +44,4 @@
 .block {
   border:solid 1px;
   margin-top:20px;
-  margin-left:300px;
-  width:300px;
 }

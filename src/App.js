@@ -14,6 +14,7 @@ import SpecificPanther from './SpecificPanther';
 import Nowhere from './Nowhere';
 import SubApplication from './SubApplication';
 import './App.css';
+import 'purecss/build/pure-min.css';
 
 class App extends Component {
   constructor(props) {
@@ -25,39 +26,67 @@ class App extends Component {
     return (
       <Router history={customHistory}>
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React - A demonstration of react-router</h2>
+        <div className='pure-menu main-menu'>
+          <span className='pure-menu-heading'>
+            <h5>React Router(v4) demo </h5>
+          </span>
         </div>
-        <p>
-          This is a demo of react-router (v4).
-        </p>
-        <h5>Menu:</h5>
-        <ul className='main-menu'>
-          <li>
-            <NavLink activeClassName='active-link' to='/direct-render'>
-              Direct render
-            </NavLink> - Route that directly renders a component</li>
-            <li>
-              <NavLink activeClassName='active-link' to='/panther'>Index of Panthers</NavLink>
-              - Parameterized routes
+        <div className='pure-menu pure-menu-horizontal main-menu'>
+          <ul className='pure-menu-list pure-u-1-2'>
+            <li className='pure-menu-item'>
+              <NavLink 
+                activeClassName='active-link' 
+                title="Render component directly in route"
+                className='pure-menu-link' to='/direct-render'>
+                Direct render
+              </NavLink> {
+            }</li>
+            <li className='pure-menu-item'>
+              <NavLink 
+                activeClassName='active-link' 
+                title="Parameterized routes" 
+                className='pure-menu-link' 
+                to='/panther'>
+                Index of Panthers
+              </NavLink>
             </li>
-          <li><NavLink to="/wizard">Go To Wizard</NavLink> - Progress based routes (similar to Parameterized)</li>
-          <li><NavLink to="/sub-app">Go To Sub-Application</NavLink> - "Nested" routes</li>
-        </ul>
+            <li className='pure-menu-item'>
+              <NavLink 
+                activeClassName='active-link' 
+                className='pure-menu-link' 
+                title='Progress based routes (similar to Parameterized)' 
+                to="/wizard">
+                Wizard
+              </NavLink>
+            </li>
+            <li className='pure-menu-item'>
+              <NavLink 
+                activeClassName='active-link' 
+                className='pure-menu-link'
+                to="/sub-app" 
+                title='"Nested" routes'>
+                Sub-Application
+              </NavLink>
+            </li>
+          </ul>
+        </div>
         <Switch>
-          <Route path="/direct-render" 
-            render={(props) => (
-            <div className='block'>
-              This is a direct call to <code>render()</code>
-            </div>)
-          } />
-          <Route path="/panther/:pantherId" component={SpecificPanther} />
-          <Route isExact={true} path="/panther" component={PantherIndex} />
-          <Route path="/wizard/:pageNumber" component={WizardPage} />
-          <Route isExact={true} path="/wizard" component={WizardPage}></Route>
-          <Route path="/sub-app/" component={SubApplication}/>
-          <Route path="*" component={Nowhere} />
+          <div className='pure-u-1-2'>
+            <Switch>
+              <Route path="/direct-render" 
+              render={(props) => (
+              <div className='block'>
+                This is a direct call to <code>render()</code>
+              </div>)
+              } />
+              <Route path="/panther/:pantherId" component={SpecificPanther} />
+              <Route isExact={true} path="/panther" component={PantherIndex} />
+              <Route path="/wizard/:pageNumber" component={WizardPage} />
+              <Route isExact={true} path="/wizard" component={WizardPage}></Route>
+              <Route path="/sub-app/" component={SubApplication}/>
+              <Route path="*" component={Nowhere} />
+            </Switch>
+          </div>
         </Switch>
       </div>
         </Router>

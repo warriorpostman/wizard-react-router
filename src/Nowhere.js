@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Nowhere = ({location}) => {
+const Nowhere = ({match}) => {
+  console.log(match);
   return (
     <div className='block'>
-      <div>Hmm, it looks like <em>{location.pathname}</em> doesn't exist</div>
+      <div>Hmm, it looks like <em>{match.url}</em> doesn't exist</div>
       <div>This route leads to...<marquee>nowhere</marquee></div>
     </div>
   );

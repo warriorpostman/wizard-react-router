@@ -7,7 +7,7 @@ import {
   NavLink,
   Switch
 } from 'react-router-dom';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import WizardPage from './WizardPage';
 import PantherIndex from './PantherIndex';
 import SpecificPanther from './SpecificPanther';
@@ -84,7 +84,7 @@ class App extends Component {
               <Route path="/wizard/:pageNumber" component={WizardPage} />
               <Route isExact={true} path="/wizard" component={WizardPage}></Route>
               <Route path="/sub-app/" component={SubApplication}/>
-              <Route path="*" component={Nowhere} />
+              <Route path="*" match={this.props.match}component={Nowhere} />
             </Switch>
           </div>
         </Switch>

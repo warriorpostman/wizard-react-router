@@ -6,6 +6,13 @@
   font-weight: bolder
 }
 
+button.button-secondary {
+  color: white;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  background: rgb(223, 117, 20);
+}
+
 .main-menu {
   background-color: #66a5dd;
   text-align: center;

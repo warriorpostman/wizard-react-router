@@ -11,6 +11,13 @@ const Child = ({match}) => {
       <p> 
         ...Or you can go back to the <Link to='/sub-app'>Index</Link>
       </p>
+      <span>Default Buttons</span>
+      <button className='pure-button pure-button-primary'>Press ME!</button>
+      <button className='pure-button' disabled>Disabled Button!</button>
+
+      <span>Custom Buttons</span>
+      <button className='pure-button button-secondary'>Press ME!</button>
+      <button className='pure-button button-secondary' disabled>Disabled Button!</button>
     </div>
   );
 }
